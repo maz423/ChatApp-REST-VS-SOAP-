@@ -1,0 +1,7 @@
+npx loadtest -n 1 -c 1  -k http://localhost:80/
+
+npx loadtest -n 1 -p Data1MB.txt http://localhost:80/create
+
+mcs -r:System.Net client.cs
+
+

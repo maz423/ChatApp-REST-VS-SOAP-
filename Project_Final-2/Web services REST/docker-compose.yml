@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+ python1:
+  build: .
+  container_name: python_1
+  command: flask run --host=0.0.0.0
+  ports:
+   - "80:5000"
+  volumes:
+   - /home/student/Desktop/436/Web services REST/Python:/usr/src/app
+  environment:
+   - FLASK_APP=hello
+   - FLASK_ENV=development
+ mono:
+  image: mono:latest
+  container_name: mono_1
+  ports:
+   - "8080:8080"
+  volumes:
+   - /home/student/Desktop/436/Web services REST/Python:/code
+  stdin_open: true
+  tty: true
+
+ 

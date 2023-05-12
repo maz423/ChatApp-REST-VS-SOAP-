@@ -1,0 +1,8 @@
+npx loadtest -n 1 -c 1  -k http://localhost:8082/NumberService.asmx/listRooms
+
+npx loadtest -n 1 --data '{"name":"john", "user":"kareem","msg":"hello"}' -T 'application/x-www-form-urlencoded' -m post http://localhost:8082/sendMsg
+
+
+npx loadtest -n 1 -p POST-Data256KB.txt http://localhost:8082/create
+
+mcs -r:System.Web.Services Client.cs MathService.cs

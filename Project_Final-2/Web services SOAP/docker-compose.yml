@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  mono:
+   image: mono:latest
+   container_name: mono_2
+   ports:
+    - "8080:8080"
+   
+   volumes:
+    - /home/student/Desktop/436/Web services SOAP:/code
+   stdin_open: true
+   tty: true
+
+  xsp1:
+   image: hpgy/mono-xsp4
+   container_name: xsp_1
+   expose:
+        - "80"
+   ports:
+    - "8082:80"
+   volumes:
+    - /home/student/Desktop/436/Web services SOAP:/app
+   stdin_open: true
+   tty: true
+
+  
+   
